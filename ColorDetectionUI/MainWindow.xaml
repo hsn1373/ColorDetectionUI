@@ -1,0 +1,455 @@
+﻿<Window x:Class="ColorDetectionUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ColorDetectionUI"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid Margin="10">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <Border BorderBrush="{StaticResource WindowBackgroundColor}"
+                    BorderThickness="1"
+                    Margin="3"
+                    Grid.Column="0">
+                
+                <Grid Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="2*" />
+                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="10*" />
+                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="4*" />
+                        <RowDefinition Height="1*" />
+                    </Grid.RowDefinitions>
+
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="3*" />
+                            <ColumnDefinition Width="2*" />
+                            <ColumnDefinition Width="3*" />
+                        </Grid.ColumnDefinitions>
+                        <Button Content="Select"
+                                Margin="1"
+                                Grid.Column="1"
+                                Background="{StaticResource WindowBackgroundColor}"
+                                Foreground="{StaticResource TextBrush}"
+                                Name="btn_select_file"
+                                Click="btn_select_file_Click">
+                        </Button>
+                    </Grid>
+
+                    <Grid Grid.Row="3">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*" />
+                            <ColumnDefinition Width="3*" />
+                            <ColumnDefinition Width="2*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Image Grid.Column="1"
+                               Name="ImageControl"
+                               Stretch="Fill"
+                               VerticalAlignment="Center"
+                               HorizontalAlignment="Center"/>
+
+                    </Grid>
+
+
+                    <Grid Grid.Row="5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="3*" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="3*" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="3*" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="3*" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="3*" />
+                            <ColumnDefinition Width="1*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Grid Grid.Column="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="4*" />
+                                <RowDefinition Height="1*" />
+                                <RowDefinition Height="1*" />
+                            </Grid.RowDefinitions>
+                            <Border BorderBrush="{StaticResource WindowBackgroundColor}"
+                                    BorderThickness="1"
+                                    Margin="10"
+                                    Grid.Row="0">
+                                <Grid Name="color_plot1"/>
+                            </Border>
+                            <Label  Grid.Row="1"
+                                    Name="color_plot1_hex"
+                                    Foreground="{StaticResource WindowText}"
+                                    VerticalContentAlignment="Center"
+                                    Padding="0"
+                                    HorizontalContentAlignment="Center"
+                                    Content="">
+                            </Label>
+                            <Label  Grid.Row="2"
+                                    Name="color_plot1_percent"
+                                    Foreground="{StaticResource WindowText}"
+                                    VerticalContentAlignment="Center"
+                                    Padding="0"
+                                    HorizontalContentAlignment="Center"
+                                    Content="">
+                            </Label>
+                        </Grid>
+
+                        <Grid Grid.Column="3">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="4*" />
+                                <RowDefinition Height="1*" />
+                                <RowDefinition Height="1*" />
+                            </Grid.RowDefinitions>
+                            <Border BorderBrush="{StaticResource WindowBackgroundColor}"
+                                    BorderThickness="1"
+                                    Margin="10"
+                                    Grid.Row="0">
+                                <Grid Name="color_plot2"/>
+                            </Border>
+                            <Label  Grid.Row="1"
+                                    Name="color_plot2_hex"
+                                    Foreground="{StaticResource WindowText}"
+                                    VerticalContentAlignment="Center"
+                                    Padding="0"
+                                    HorizontalContentAlignment="Center"
+                                    Content="">
+                            </Label>
+                            <Label  Grid.Row="2"
+                                    Name="color_plot2_percent"
+                                    Foreground="{StaticResource WindowText}"
+                                    VerticalContentAlignment="Center"
+                                    Padding="0"
+                                    HorizontalContentAlignment="Center"
+                                    Content="">
+                            </Label>
+                        </Grid>
+
+                        <Grid Grid.Column="5">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="4*" />
+                                <RowDefinition Height="1*" />
+                                <RowDefinition Height="1*" />
+                            </Grid.RowDefinitions>
+                            <Border BorderBrush="{StaticResource WindowBackgroundColor}"
+                                    BorderThickness="1"
+                                    Margin="10"
+                                    Grid.Row="0">
+                                <Grid Name="color_plot3"/>
+                            </Border>
+                            <Label  Grid.Row="1"
+                                    Name="color_plot3_hex"
+                                    Foreground="{StaticResource WindowText}"
+                                    VerticalContentAlignment="Center"
+                                    Padding="0"
+                                    HorizontalContentAlignment="Center"
+                                    Content="">
+                            </Label>
+                            <Label  Grid.Row="2"
+                                    Name="color_plot3_percent"
+                                    Foreground="{StaticResource WindowText}"
+                                    VerticalContentAlignment="Center"
+                                    Padding="0"
+                                    HorizontalContentAlignment="Center"
+                                    Content="">
+                            </Label>
+                        </Grid>
+
+                        <Grid Grid.Column="7">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="4*" />
+                                <RowDefinition Height="1*" />
+                                <RowDefinition Height="1*" />
+                            </Grid.RowDefinitions>
+                            <Border BorderBrush="{StaticResource WindowBackgroundColor}"
+                                    BorderThickness="1"
+                                    Margin="10"
+                                    Grid.Row="0">
+                                <Grid Name="color_plot4"/>
+                            </Border>
+                            <Label  Grid.Row="1"
+                                    Name="color_plot4_hex"
+                                    Foreground="{StaticResource WindowText}"
+                                    VerticalContentAlignment="Center"
+                                    Padding="0"
+                                    HorizontalContentAlignment="Center"
+                                    Content="">
+                            </Label>
+                            <Label  Grid.Row="2"
+                                    Name="color_plot4_percent"
+                                    Foreground="{StaticResource WindowText}"
+                                    VerticalContentAlignment="Center"
+                                    Padding="0"
+                                    HorizontalContentAlignment="Center"
+                                    Content="">
+                            </Label>
+                        </Grid>
+
+                        <Grid Grid.Column="9">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="4*" />
+                                <RowDefinition Height="1*" />
+                                <RowDefinition Height="1*" />
+                            </Grid.RowDefinitions>
+                            <Border BorderBrush="{StaticResource WindowBackgroundColor}"
+                                    BorderThickness="1"
+                                    Margin="10"
+                                    Grid.Row="0">
+                                <Grid Name="color_plot5"/>
+                            </Border>
+                            <Label  Grid.Row="1"
+                                    Name="color_plot5_hex"
+                                    Foreground="{StaticResource WindowText}"
+                                    VerticalContentAlignment="Center"
+                                    Padding="0"
+                                    HorizontalContentAlignment="Center"
+                                    Content="">
+                            </Label>
+                            <Label  Grid.Row="2"
+                                    Name="color_plot5_percent"
+                                    Foreground="{StaticResource WindowText}"
+                                    VerticalContentAlignment="Center"
+                                    Padding="0"
+                                    HorizontalContentAlignment="Center"
+                                    Content="">
+                            </Label>
+                        </Grid>
+
+                    </Grid>
+
+                </Grid>
+            </Border>
+
+
+
+            <Border BorderBrush="{StaticResource WindowBackgroundColor}"
+                    BorderThickness="1"
+                    Margin="3"
+                    Grid.Column="1">
+
+                <Grid Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="2*" />
+                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="10*" />
+                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="4*" />
+                        <RowDefinition Height="1*" />
+                    </Grid.RowDefinitions>
+
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="3*" />
+                            <ColumnDefinition Width="2*" />
+                            <ColumnDefinition Width="3*" />
+                        </Grid.ColumnDefinitions>
+                        <Button Content="Select"
+                                Margin="1"
+                                Grid.Column="1"
+                                Background="{StaticResource WindowBackgroundColor}"
+                                Foreground="{StaticResource TextBrush}"
+                                Name="btn_select_file2"
+                                Click="btn_select_file2_Click">
+                        </Button>
+                    </Grid>
+
+                    <Grid Grid.Row="3">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*" />
+                            <ColumnDefinition Width="3*" />
+                            <ColumnDefinition Width="2*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Image Grid.Column="1"
+                               Name="ImageControl2"
+                               Stretch="Fill"
+                               VerticalAlignment="Center"
+                               HorizontalAlignment="Center"/>
+
+                    </Grid>
+
+
+                    <Grid Grid.Row="5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="3*" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="3*" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="3*" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="3*" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="3*" />
+                            <ColumnDefinition Width="1*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Grid Grid.Column="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="4*" />
+                                <RowDefinition Height="1*" />
+                                <RowDefinition Height="1*" />
+                            </Grid.RowDefinitions>
+                            <Border BorderBrush="{StaticResource WindowBackgroundColor}"
+                                    BorderThickness="1"
+                                    Margin="10"
+                                    Grid.Row="0">
+                                <Grid Name="color_plot6"/>
+                            </Border>
+                            <Label  Grid.Row="1"
+                                    Name="color_plot6_hex"
+                                    Foreground="{StaticResource WindowText}"
+                                    VerticalContentAlignment="Center"
+                                    Padding="0"
+                                    HorizontalContentAlignment="Center"
+                                    Content="">
+                            </Label>
+                            <Label  Grid.Row="2"
+                                    Name="color_plot6_percent"
+                                    Foreground="{StaticResource WindowText}"
+                                    VerticalContentAlignment="Center"
+                                    Padding="0"
+                                    HorizontalContentAlignment="Center"
+                                    Content="">
+                            </Label>
+                        </Grid>
+
+                        <Grid Grid.Column="3">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="4*" />
+                                <RowDefinition Height="1*" />
+                                <RowDefinition Height="1*" />
+                            </Grid.RowDefinitions>
+                            <Border BorderBrush="{StaticResource WindowBackgroundColor}"
+                                    BorderThickness="1"
+                                    Margin="10"
+                                    Grid.Row="0">
+                                <Grid Name="color_plot7"/>
+                            </Border>
+                            <Label  Grid.Row="1"
+                                    Name="color_plot7_hex"
+                                    Foreground="{StaticResource WindowText}"
+                                    VerticalContentAlignment="Center"
+                                    Padding="0"
+                                    HorizontalContentAlignment="Center"
+                                    Content="">
+                            </Label>
+                            <Label  Grid.Row="2"
+                                    Name="color_plot7_percent"
+                                    Foreground="{StaticResource WindowText}"
+                                    VerticalContentAlignment="Center"
+                                    Padding="0"
+                                    HorizontalContentAlignment="Center"
+                                    Content="">
+                            </Label>
+                        </Grid>
+
+                        <Grid Grid.Column="5">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="4*" />
+                                <RowDefinition Height="1*" />
+                                <RowDefinition Height="1*" />
+                            </Grid.RowDefinitions>
+                            <Border BorderBrush="{StaticResource WindowBackgroundColor}"
+                                    BorderThickness="1"
+                                    Margin="10"
+                                    Grid.Row="0">
+                                <Grid Name="color_plot8"/>
+                            </Border>
+                            <Label  Grid.Row="1"
+                                    Name="color_plot8_hex"
+                                    Foreground="{StaticResource WindowText}"
+                                    VerticalContentAlignment="Center"
+                                    Padding="0"
+                                    HorizontalContentAlignment="Center"
+                                    Content="">
+                            </Label>
+                            <Label  Grid.Row="2"
+                                    Name="color_plot8_percent"
+                                    Foreground="{StaticResource WindowText}"
+                                    VerticalContentAlignment="Center"
+                                    Padding="0"
+                                    HorizontalContentAlignment="Center"
+                                    Content="">
+                            </Label>
+                        </Grid>
+
+                        <Grid Grid.Column="7">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="4*" />
+                                <RowDefinition Height="1*" />
+                                <RowDefinition Height="1*" />
+                            </Grid.RowDefinitions>
+                            <Border BorderBrush="{StaticResource WindowBackgroundColor}"
+                                    BorderThickness="1"
+                                    Margin="10"
+                                    Grid.Row="0">
+                                <Grid Name="color_plot9"/>
+                            </Border>
+                            <Label  Grid.Row="1"
+                                    Name="color_plot9_hex"
+                                    Foreground="{StaticResource WindowText}"
+                                    VerticalContentAlignment="Center"
+                                    Padding="0"
+                                    HorizontalContentAlignment="Center"
+                                    Content="">
+                            </Label>
+                            <Label  Grid.Row="2"
+                                    Name="color_plot9_percent"
+                                    Foreground="{StaticResource WindowText}"
+                                    VerticalContentAlignment="Center"
+                                    Padding="0"
+                                    HorizontalContentAlignment="Center"
+                                    Content="">
+                            </Label>
+                        </Grid>
+
+                        <Grid Grid.Column="9">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="4*" />
+                                <RowDefinition Height="1*" />
+                                <RowDefinition Height="1*" />
+                            </Grid.RowDefinitions>
+                            <Border BorderBrush="{StaticResource WindowBackgroundColor}"
+                                    BorderThickness="1"
+                                    Margin="10"
+                                    Grid.Row="0">
+                                <Grid Name="color_plot10"/>
+                            </Border>
+                            <Label  Grid.Row="1"
+                                    Name="color_plot10_hex"
+                                    Foreground="{StaticResource WindowText}"
+                                    VerticalContentAlignment="Center"
+                                    Padding="0"
+                                    HorizontalContentAlignment="Center"
+                                    Content="">
+                            </Label>
+                            <Label  Grid.Row="2"
+                                    Name="color_plot10_percent"
+                                    Foreground="{StaticResource WindowText}"
+                                    VerticalContentAlignment="Center"
+                                    Padding="0"
+                                    HorizontalContentAlignment="Center"
+                                    Content="">
+                            </Label>
+                        </Grid>
+
+                    </Grid>
+
+                </Grid>
+            </Border>
+
+        </Grid>
+    </Grid>
+</Window>

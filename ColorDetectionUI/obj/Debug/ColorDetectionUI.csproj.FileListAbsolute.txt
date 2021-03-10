@@ -1,0 +1,17 @@
+D:\WORK\ColorDetectionUI\ColorDetectionUI\bin\Debug\ColorDetectionUI.exe.config
+D:\WORK\ColorDetectionUI\ColorDetectionUI\bin\Debug\ColorDetectionUI.exe
+D:\WORK\ColorDetectionUI\ColorDetectionUI\bin\Debug\ColorDetectionUI.pdb
+D:\WORK\ColorDetectionUI\ColorDetectionUI\obj\Debug\ColorDetectionUI.csprojAssemblyReference.cache
+D:\WORK\ColorDetectionUI\ColorDetectionUI\obj\Debug\MainWindow.g.cs
+D:\WORK\ColorDetectionUI\ColorDetectionUI\obj\Debug\App.g.cs
+D:\WORK\ColorDetectionUI\ColorDetectionUI\obj\Debug\ColorDetectionUI_MarkupCompile.cache
+D:\WORK\ColorDetectionUI\ColorDetectionUI\obj\Debug\ColorDetectionUI_MarkupCompile.lref
+D:\WORK\ColorDetectionUI\ColorDetectionUI\obj\Debug\App.baml
+D:\WORK\ColorDetectionUI\ColorDetectionUI\obj\Debug\MainWindow.baml
+D:\WORK\ColorDetectionUI\ColorDetectionUI\obj\Debug\Theme.baml
+D:\WORK\ColorDetectionUI\ColorDetectionUI\obj\Debug\ColorDetectionUI.g.resources
+D:\WORK\ColorDetectionUI\ColorDetectionUI\obj\Debug\ColorDetectionUI.Properties.Resources.resources
+D:\WORK\ColorDetectionUI\ColorDetectionUI\obj\Debug\ColorDetectionUI.csproj.GenerateResource.cache
+D:\WORK\ColorDetectionUI\ColorDetectionUI\obj\Debug\ColorDetectionUI.csproj.CoreCompileInputs.cache
+D:\WORK\ColorDetectionUI\ColorDetectionUI\obj\Debug\ColorDetectionUI.exe
+D:\WORK\ColorDetectionUI\ColorDetectionUI\obj\Debug\ColorDetectionUI.pdb
